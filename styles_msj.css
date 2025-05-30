@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffe6f0;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.confeti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #ff69b4;
+  border-radius: 50%;
+  animation: caer 5s infinite ease-in;
+  top: -10px;
+  left: calc(10% + 80% * random());
+}
+
+@keyframes caer {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+.contenedor-mensaje {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.ramo-flores {
+  font-size: 90px;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+  animation: flotar 2s infinite alternate ease-in-out;
+}
+
+.ramo-flores:hover {
+  transform: scale(1.1);
+}
+
+@keyframes flotar {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+.mensaje {
+  display: none;
+  text-align: center;
+  margin-top: 30px;
+  max-width: 600px;
+  background-color: #fff0f5;
+  border: 3px solid #ff69b4;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 182, 193, 0.6);
+}
+
+.mensaje.visible {
+  display: block;
+  animation: aparecer 1s ease-in-out;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.pulsame-texto {
+  font-size: 1.5rem;
+  color: #d63384;
+  margin-bottom: 10px;
+  animation: parpadeo 1s infinite;
+}
+
+@keyframes parpadeo {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.flor-cayendo {
+  position: absolute;
+  top: -50px;
+  font-size: 30px;
+  animation: caerFlor 5s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes caerFlor {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}

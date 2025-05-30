@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¡Sorpresa para Abby!</title>
+  <link rel="stylesheet" href="styles_msj.css">
+</head>
+<body>
+  <div class="decoracion-mensaje" id="flores-cayendo-container">
+
+    <div class="confeti"></div>
+    <div class="confeti"></div>
+    <div class="confeti"></div>
+  </div>
+
+  <div class="contenedor-mensaje">
+
+    <div class="pulsame-texto">¡Haz clic en mí!</div>
+
+    <div class="ramo-flores" onclick="mostrarMensaje()">💐</div>
+
+    <div class="mensaje" id="mensaje">
+      <h1>¡Feliz Cumpleaños Abby! 🎉</h1>
+      <p>
+        No tengo el placer de conocerte cercanamente, ¡Ojala podamos cambiar eso!
+        Pasatela super en este tu dia especial.
+        Espero que hoy este lleno de alegría, amor y muchas sorpresas. 
+        ¡Te mereces todo lo mejor en tu día especial! 🌸
+      </p>
+    </div>
+  </div>
+
+  <script>
+    function mostrarMensaje() {
+      const mensaje = document.getElementById('mensaje');
+      const container = document.getElementById('flores-cayendo-container');
+      mensaje.classList.add('visible');
+
+      for (let i = 0; i < 20; i++) {
+        const flor = document.createElement('div');
+        flor.className = 'flor-cayendo';
+        flor.innerText = '🌸';
+        flor.style.left = Math.random() * 100 + 'vw';
+        flor.style.animationDelay = (Math.random() * 2) + 's';
+        container.appendChild(flor);
+      }
+    }
+  </script>
+</body>
+</html>
